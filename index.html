@@ -13,22 +13,24 @@
   </style>
 
   
-  <script>
+   <script>
     (function(){
-      if (localStorage.getItem('theme') === 'dark') {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     })();
   </script>
 
-  <!-- CONFIGURACIÓN DE TAILWIND (debe ir _antes_ de cargar el script) -->
+  <!-- CONFIGURACIÓN DE TAILWIND (antes de cargar el CDN) -->
   <script>
     tailwind.config = { darkMode: 'class' };
   </script>
 
   <!-- Carga Tailwind UNA sola vez -->
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
 </head>
  <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300 px-4 sm:px-6 md:px-8">
 
@@ -167,4 +169,3 @@
 
 </body>
 </html>
-""
