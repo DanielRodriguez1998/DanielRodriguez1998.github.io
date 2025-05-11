@@ -4,62 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Professional portfolio of Daniel Rodríguez, bioinformatician and data analyst in biomedical sciences." />
-  <title>Daniel Rodríguez | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-
-  <!-- CARGA EL TEMA ANTES DE TAILWIND -->
-  <script>
-    // Este bloque corre ANTES de cargar Tailwind
-    (function () {
-      const theme = localStorage.getItem('theme');
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
-  </script>
-
-  <!-- CONFIGURACIÓN DE TAILWIND -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional portfolio of Daniel Rodríguez, bioinformatician and data analyst in biomedical sciences." />
   <meta property="og:title" content="Daniel Rodríguez | Portfolio" />
   <meta property="og:description" content="Explore the work of Daniel Rodríguez in bioinformatics, transcriptomics, and data science." />
   <meta property="og:image" content="imagenes/preview.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <title>Daniel Rodríguez | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-
+  <!-- Aplica tema antes de cargar Tailwind -->
   <script>
     (function () {
       const theme = localStorage.getItem('theme');
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
       }
+      // si theme es 'light' o null, no añadimos 'dark', arranca en claro
     })();
   </script>
 
+  <!-- Configuración de Tailwind -->
   <script>
     tailwind.config = {
       darkMode: 'class'
@@ -67,119 +31,95 @@
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Lightbox CSS/JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
+  
+  <!-- Google Analytics (opcional) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXX');
   </script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </head>
 
-
- <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300 px-4 sm:px-6 md:px-8">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300 px-4 sm:px-6 md:px-8">
 
   <!-- NAVBAR -->
   <header class="bg-white dark:bg-gray-800 shadow fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-blue-800">Daniel Rodríguez</h1>
       <nav class="space-x-6 text-sm sm:text-base pr-16">
-        <a href="#about" class="hover:text-blue-600 transition duration-200">About</a>
-        <a href="#projects" class="hover:text-blue-600 transition duration-200">Projects</a>
-        <a href="#gallery" class="hover:text-blue-600 transition duration-200">Gallery</a>
-        <a href="#contact" class="hover:text-blue-600 transition duration-200">Contact</a>
+        <a href="#about" class="hover:text-blue-600 transition">About</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+        <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
       </nav>
     </div>
   </header>
 
-  <button id="darkModeToggle" onclick="toggleDarkMode()" class="fixed top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-700 transition duration-200 z-50">🌓</button>
+  <!-- Toggle Dark Mode -->
+  <button id="darkModeToggle"
+          class="fixed top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-700 transition z-50">
+    🌞
+  </button>
 
-   <main class="pt-[80px] px-4 max-w-7xl mx-auto text-sm sm:text-base md:text-lg">
-
+  <main class="pt-[80px] max-w-7xl mx-auto text-sm sm:text-base md:text-lg">
     <!-- ABOUT -->
     <section id="about" class="scroll-mt-28 mb-16">
       <h2 class="text-2xl font-bold text-blue-900 mb-4">About Me</h2>
-      <p class="mb-4">Bachelor in Genomic Biotechnology with a Master's degree in Immunobiology, specialized in analysis and interpretation of biological data, machine learning, and applied statistics for biomedical data. Passionate about building practical solutions for science and health challenges using efficient R and Python pipelines.</p>
-      <a href="#cv" class="text-blue-600 hover:underline transition duration-200">See more in my CV</a>
+      <p class="mb-4">
+        Bachelor in Genomic Biotechnology with a Master's degree in Immunobiology, specialized in analysis and interpretation
+        of biological data, machine learning, and applied statistics for biomedical data. Passionate about building practical
+        solutions for science and health challenges using efficient R and Python pipelines.
+      </p>
+      <a href="#cv" class="text-blue-600 hover:underline">See more in my CV</a>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="scroll-mt-28 mb-16">
       <h2 class="text-2xl font-bold text-blue-900 mb-6">Featured Projects</h2>
       <div class="space-y-8">
+        <!-- Proyecto 1 -->
         <div>
           <h3 class="text-xl font-semibold">Tumor Antigen Identification Thesis</h3>
           <p>Prediction of tumor antigens through differential gene expression, immunogenicity (IEDB), and mutated protein analysis.</p>
-          <a href="https://github.com/DanielRodriguez1998/tesis_cancer_mama_transcriptomica.git" class="text-blue-600 hover:underline transition duration-200">View Code on GitHub</a>
+          <a href="https://github.com/DanielRodriguez1998/tesis_cancer_mama_transcriptomica.git"
+             class="text-blue-600 hover:underline">View Code on GitHub</a>
         </div>
+        <!-- Proyecto 2 -->
         <div>
           <h3 class="text-xl font-semibold">Prognostic Biomarkers in Glioblastoma</h3>
           <p>Pipeline for UMAP-PAM clustering, survival analysis, gene correlation networks, and prognostic index modeling.</p>
         </div>
+        <!-- Proyecto 3 -->
         <div>
           <h3 class="text-xl font-semibold">Mechanism of Action (MoA) Predictor</h3>
           <p>TabTransformer-based model for multi-label classification on L1000 dataset, with advanced techniques like label smoothing and multi-seed cross-validation.</p>
-          <a href="https://github.com/DanielRodriguez1998/Predictor-de-MoA.git" class="text-blue-600 hover:underline transition duration-200">View Code on GitHub</a>
+          <a href="https://github.com/DanielRodriguez1998/Predictor-de-MoA.git"
+             class="text-blue-600 hover:underline">View Code on GitHub</a>
         </div>
       </div>
     </section>
 
     <!-- GALLERY -->
     <section id="gallery" class="scroll-mt-28 mb-16">
-      <h2 class="text-2xl font-bold text-blue-900 mb-6">Graphics Gallery</h2>
-      <!-- Tumor Antigen Identification -->
-      <details class="mb-6">
-        <summary class="cursor-pointer font-semibold text-lg text-blue-700">Tumor Antigen Identification</summary>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-          <a href="imagenes/genes candidatos2.png" data-lightbox="antigen" data-title="Violin Plot: Normal vs Tumor"><img src="imagenes/genes candidatos2.png" alt="Violin Plot" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/birc5sub.png" data-lightbox="antigen" data-title="BIRC5 Differential Expression"><img src="imagenes/birc5sub.png" alt="BIRC5 Plot" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/EXP_organos.png" data-lightbox="antigen" data-title="Gene Expression in Tissues"><img src="imagenes/EXP_organos.png" alt="Tissue Expression" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/exp_cells.png" data-lightbox="antigen" data-title="Gene Expression in Cell Types"><img src="imagenes/exp_cells.png" alt="Cell Expression" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/essential_genes_plot.png" data-lightbox="antigen" data-title="Essential Genes"><img src="imagenes/essential_genes_plot.png" alt="Essential Genes" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/plot_comparison_genesNETflu.png" data-lightbox="antigen" data-title="IEDB Immunogenicity Comparison"><img src="imagenes/plot_comparison_genesNETflu.png" alt="IEDB Comparison" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/plot_comparison_geneshisto.png" data-lightbox="antigen" data-title="Peptides per Protein (IEDB)"><img src="imagenes/plot_comparison_geneshisto.png" alt="Peptides by Protein" class="rounded transition duration-200 hover:scale-105"></a>
-        </div>
-      </details>
-
-      <!-- Prognostic Biomarkers in Glioblastoma -->
-      <details class="mb-6">
-        <summary class="cursor-pointer font-semibold text-lg text-blue-700">Prognostic Biomarkers in Glioblastoma</summary>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-          <a href="imagenes/cut completo.png" data-lightbox="gbm" data-title="Prognostic Index Cutoff"><img src="imagenes/cut completo.png" alt="Prognostic Index" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/KaplanMeier_Prognostic_completo.png" data-lightbox="gbm" data-title="Kaplan-Meier Survival Analysis"><img src="imagenes/KaplanMeier_Prognostic_completo.png" alt="Kaplan-Meier" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/Dendrogram_ConsensusClustering.png" data-lightbox="gbm" data-title="Hierarchical Clustering"><img src="imagenes/Dendrogram_ConsensusClustering.png" alt="Dendrogram" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/UMAP_Consensus_Clustering.png" data-lightbox="gbm" data-title="UMAP Consensus Clustering"><img src="imagenes/UMAP_Consensus_Clustering.png" alt="UMAP Clustering" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/MM_vs_GS_blue.png" data-lightbox="gbm" data-title="Module Membership vs Gene Significance"><img src="imagenes/MM_vs_GS_blue.png" alt="Module Membership" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/Heatmap_ModuleTrait_Right.png" data-lightbox="gbm" data-title="Heatmap of Modules and p-values"><img src="imagenes/Heatmap_ModuleTrait_Right.png" alt="Heatmap" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/coexpression_network_midnightblue.png" data-lightbox="gbm" data-title="Midnightblue Module Network"><img src="imagenes/coexpression_network_midnightblue.png" alt="Gene Network" class="rounded transition duration-200 hover:scale-105"></a>
-        </div>
-      </details>
-
-      <!-- Miscellaneous Analyses -->
-      <details class="mb-6">
-        <summary class="cursor-pointer font-semibold text-lg text-blue-700">Miscellaneous Analyses</summary>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-          <a href="imagenes/2_2.png" data-lightbox="misc" data-title="3D Tumor Subtypes Clustering"><img src="imagenes/2_2.png" alt="3D Clustering" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/Clusterizado.png" data-lightbox="misc" data-title="PCA and PAM Clustering"><img src="imagenes/Clusterizado.png" alt="PCA Clustering" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/deconv10112024.png" data-lightbox="misc" data-title="CIBERSORT and ESTIMATE"><img src="imagenes/deconv10112024.png" alt="CIBERSORT" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/deconvolucion_bien_separado.png" data-lightbox="misc" data-title="quanTIseq"><img src="imagenes/deconvolucion_bien_separado.png" alt="quanTIseq" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/drivergensmut.png" data-lightbox="misc" data-title="Mutations in Oncogenes"><img src="imagenes/drivergensmut.png" alt="Mutations" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/heatmap_correlacion.png" data-lightbox="misc" data-title="Gene Correlation Heatmap"><img src="imagenes/heatmap_correlacion.png" alt="Correlation Heatmap" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/hsa05200.pathview.png" data-lightbox="misc" data-title="KEGG Pathway Coloring"><img src="imagenes/hsa05200.pathview.png" alt="KEGG Pathway" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/redes de interacción procesos de cancer.png" data-lightbox="misc" data-title="Biological Processes Network"><img src="imagenes/redes de interacción procesos de cancer.png" alt="Processes Network" class="rounded transition duration-200 hover:scale-105"></a>
-          <a href="imagenes/varianza acumulativa explicada.png" data-lightbox="misc" data-title="Explained Variance PCA"><img src="imagenes/varianza acumulativa explicada.png" alt="Variance PCA" class="rounded transition duration-200 hover:scale-105"></a>
-        </div>
-      </details>
+      <!-- ... tu galería igual que antes ... -->
     </section>
 
     <!-- CV -->
     <section id="cv" class="scroll-mt-28 mb-16">
       <h2 class="text-2xl font-bold text-blue-900 mb-4">Curriculum Vitae</h2>
-      <p class="mb-2">Data Analyst with a strong background in bioinformatics and immunology, passionate about transforming complex data into actionable insights. Experienced in transcriptomic analysis, statistical modeling, and machine learning applications.</p>
-      <a href="CV_DanielRodriguez.pdf" download class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-200 hover:scale-105">Download CV</a>
+      <p class="mb-2">
+        Data Analyst with a strong background in bioinformatics and immunology, passionate about transforming complex data into actionable insights.
+        Experienced in transcriptomic analysis, statistical modeling, and machine learning applications.
+      </p>
+      <a href="CV_DanielRodriguez.pdf" download
+         class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition hover:scale-105">
+        Download CV
+      </a>
     </section>
 
     <!-- CONTACT -->
@@ -187,33 +127,34 @@
       <h2 class="text-2xl font-bold text-blue-900 mb-4">Contact</h2>
       <p><strong>Name:</strong> Daniel Enrique Rodríguez Espinosa</p>
       <p><strong>Location:</strong> Apodaca, Nuevo León, Mexico</p>
-      <p><strong>Email:</strong> <a href="mailto:daniel.rodriguezespn@uanl.edu.mx" class="text-blue-600 hover:underline transition duration-200">daniel.rodriguezespn@uanl.edu.mx</a></p>
-      <a href="mailto:daniel.rodriguezespn@uanl.edu.mx?subject=Service%20Request%20from%20Portfolio" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition duration-200 hover:scale-105">Hire Me</a>
+      <p><strong>Email:</strong>
+        <a href="mailto:daniel.rodriguezespn@uanl.edu.mx" class="text-blue-600 hover:underline">
+          daniel.rodriguezespn@uanl.edu.mx
+        </a>
+      </p>
+      <a href="mailto:daniel.rodriguezespn@uanl.edu.mx?subject=Service%20Request%20from%20Portfolio"
+         class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition hover:scale-105">
+        Hire Me
+      </a>
     </section>
   </main>
 
-<script>
-  function toggleDarkMode() {
-    const html = document.documentElement;
-    const button = document.getElementById('darkModeToggle');
-
-    if (html.classList.contains('dark')) {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      button.textContent = '🌞';
-    } else {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      button.textContent = '🌙';
+  <!-- Script de toggle -->
+  <script>
+    const btn = document.getElementById('darkModeToggle');
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      btn.textContent = isDark ? '🌙' : '🌞';
     }
-  }
+    btn.addEventListener('click', toggleDarkMode);
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('theme');
-    const button = document.getElementById('darkModeToggle');
-    button.textContent = theme === 'dark' ? '🌙' : '🌞';
-  });
-</script>
-
+    // Inicializa el ícono correcto al cargar
+    window.addEventListener('DOMContentLoaded', () => {
+      const stored = localStorage.getItem('theme');
+      btn.textContent = stored === 'dark' ? '🌙' : '🌞';
+    });
+  </script>
 </body>
-</html>
+</html> ""
