@@ -12,30 +12,25 @@
     body { font-family: 'Inter', sans-serif; }
   </style>
 
-  
-   <script>
+  <!-- Asegura que no se active el modo oscuro automáticamente -->
+  <script>
     (function(){
-      const theme = localStorage.getItem('theme');
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      document.documentElement.classList.remove('dark'); // Asegura que el modo claro esté siempre activo
     })();
   </script>
 
   <!-- CONFIGURACIÓN DE TAILWIND (antes de cargar el CDN) -->
   <script>
-    tailwind.config = { darkMode: 'class' };
+    tailwind.config = { darkMode: 'class' }; // Mantiene la configuración de Tailwind en modo claro
   </script>
 
   <!-- Carga Tailwind UNA sola vez -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
- <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300 px-4 sm:px-6 md:px-8">
+<body class="bg-gray-50 text-gray-800 transition duration-300 px-4 sm:px-6 md:px-8">
 
   <!-- NAVBAR -->
-  <header class="bg-white dark:bg-gray-800 shadow fixed top-0 left-0 w-full z-50">
+  <header class="bg-white shadow fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-blue-800">Daniel Rodríguez</h1>
       <nav class="space-x-6 text-sm sm:text-base pr-16">
@@ -46,8 +41,6 @@
       </nav>
     </div>
   </header>
-
-  <button id="darkModeToggle" onclick="toggleDarkMode()" class="fixed top-4 right-4 bg-gray-800 text-white px-3 py-1 rounded hover:bg-gray-700 transition duration-200 z-50">🌓</button>
 
    <main class="pt-[80px] px-4 max-w-7xl mx-auto text-sm sm:text-base md:text-lg">
 
@@ -131,7 +124,7 @@
     <section id="cv" class="scroll-mt-28 mb-16">
       <h2 class="text-2xl font-bold text-blue-900 mb-4">Curriculum Vitae</h2>
       <p class="mb-2">Data Analyst with a strong background in bioinformatics and immunology, passionate about transforming complex data into actionable insights. Experienced in transcriptomic analysis, statistical modeling, and machine learning applications.</p>
-      <a href="CV_DanielRodriguez.pdf" download class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-200 hover:scale-105">Download CV</a>
+      <a href="CV_DanielRodriguez.pdf" download="" class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition duration-200 hover:scale-105">Download CV</a>
     </section>
 
     <!-- CONTACT -->
@@ -143,29 +136,6 @@
       <a href="mailto:daniel.rodriguezespn@uanl.edu.mx?subject=Service%20Request%20from%20Portfolio" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition duration-200 hover:scale-105">Hire Me</a>
     </section>
   </main>
-
-<script>
-  function toggleDarkMode() {
-    const html = document.documentElement;
-    const button = document.getElementById('darkModeToggle');
-
-    if (html.classList.contains('dark')) {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      button.textContent = '🌞';
-    } else {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      button.textContent = '🌙';
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('theme');
-    const button = document.getElementById('darkModeToggle');
-    button.textContent = theme === 'dark' ? '🌙' : '🌞';
-  });
-</script>
 
 </body>
 </html>
