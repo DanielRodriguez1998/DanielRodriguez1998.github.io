@@ -1,185 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Portafolio Daniel Rodríguez</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-        h1, h2, h3 { color: #333; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        button { margin-top: 10px; padding: 10px; background-color: #0066cc; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #004999; }
-        .section { background-color: white; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
-        img { max-width: 100%; margin-top: 10px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de Daniel Rodríguez, bioinformático y analista de datos en ciencias biomédicas.">
+  <title>Daniel Rodríguez | Portafolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </head>
-<body>
 
-<h1>Portafolio de Daniel Rodríguez</h1>
+<body class="bg-gray-50 text-gray-800">
 
-<div class="section">
-    <h2>Sobre mí</h2>
-    <p>Licenciado en biotecnología genómica con maestría en inmunobiología, especializado en análisis e interpretación de datos biológicos, machine learning y estadística aplicada a datos biomédicos. Apasionado por construir soluciones prácticas para problemas de salud y ciencia, combinando R y Python en pipelines eficientes.</p>
-</div>
+  <!-- NAVBAR -->
+  <header class="bg-white shadow fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-800">Daniel Rodríguez</h1>
+      <nav class="space-x-6">
+        <a href="#sobre-mi" class="hover:text-blue-600">Sobre mí</a>
+        <a href="#proyectos" class="hover:text-blue-600">Proyectos</a>
+        <a href="#graficos" class="hover:text-blue-600">Gráficos</a>
+        <a href="#contacto" class="hover:text-blue-600">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="section">
-    <h2>Proyectos destacados</h2>
+  <main class="pt-24 px-4 max-w-7xl mx-auto">
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="mb-16">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4">Sobre mí</h2>
+      <p class="mb-4">Licenciado en Biotecnología Genómica con maestría en Inmunobiología, especializado en análisis e interpretación de datos biológicos, machine learning y estadística aplicada a datos biomédicos. Apasionado por construir soluciones prácticas para problemas de salud y ciencia, combinando R y Python en pipelines eficientes.</p>
+      <a href="#cv" class="text-blue-600 hover:underline">Ver más en mi CV</a>
+    </section>
 
-    <h3>Bioestadística</h3>
-    <p>Repositorio con análisis estadísticos aplicados a ciencias biológicas, incluyendo ANOVA, regresión, correlaciones, análisis multivariados y visualizaciones en R.</p>
-    <a href="https://github.com/DanielRodriguez1998/Bioestad-stica.git" target="_blank">Ver código en GitHub</a>
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="mb-16">
+      <h2 class="text-2xl font-bold text-blue-900 mb-6">Proyectos destacados</h2>
 
-    <h3>Tesis de cáncer de mama (transcriptómica)</h3>
-    <p>Pipeline completo para analizar datos transcriptómicos de cáncer de mama: deconvolución inmunológica, reducción dimensional (UMAP, PCA), clustering (PAM, HDBSCAN), análisis de supervivencia (modelos de Cox), índices pronósticos y redes génicas.</p>
-    <a href="https://github.com/DanielRodriguez1998/tesis_cancer_mama_transcriptomica.git" target="_blank">Ver código en GitHub</a>
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold">🔬 Tesis de identificación de antígenos tumorales</h3>
+          <p>Predicción de antígenos tumorales mediante expresión diferencial, inmunogenicidad (IEDB) y análisis de proteínas mutadas.</p>
+          <a href="https://github.com/DanielRodriguez1998/tesis_cancer_mama_transcriptomica.git" class="text-blue-600 hover:underline">Código en GitHub</a>
+        </div>
 
-    <h3>Predictor de Mechanism of Action (MoA)</h3>
-    <p>Modelo en Python basado en TabTransformer para predecir mecanismos de acción de compuestos usando datos transcriptómicos. Implementa label smoothing, early stopping, scheduler y validación cruzada multisemilla.</p>
-    <a href="https://github.com/DanielRodriguez1998/Predictor-de-MoA.git" target="_blank">Ver código en GitHub</a>
-</div>
+        <div>
+          <h3 class="text-xl font-semibold">🧠 Biomarcadores pronósticos en Glioblastoma</h3>
+          <p>Pipeline para clustering UMAP-PAM, análisis de supervivencia, correlaciones genéticas y construcción de índices pronósticos.</p>
+        </div>
 
-<div class="section">
-    <h2>Gráficos</h2>
+        <div>
+          <h3 class="text-xl font-semibold">💊 Predictor de Mecanismos de Acción (MoA)</h3>
+          <p>Modelo con TabTransformer en Python para clasificación multi-etiqueta en datos L1000, usando técnicas avanzadas como label smoothing y validación cruzada multisemilla.</p>
+          <a href="https://github.com/DanielRodriguez1998/Predictor-de-MoA.git" class="text-blue-600 hover:underline">Código en GitHub</a>
+        </div>
+      </div>
+    </section>
 
-    <button onclick="toggleImage('img1')">Clusterizado 3D de subtipos tumorales (UMAP-HDBSCAN)</button>
-    <div id="img1" style="display:none;">
-        <img src="imagenes/2_2.png" alt="Clusterizado 3D de subtipos tumorales (UMAP-HDBSCAN)">
-    </div>
-    
-    <button onclick="toggleImage('img2')">Clusterizado de cáncer de mama (PCA y PAM)</button>
-    <div id="img2" style="display:none;">
-        <img src="imagenes/Clusterizado.png" alt="Clusterizado de cáncer de mama (PCA y PAM)">
-    </div>
-    
-    <button onclick="toggleImage('img3')">Agrupación jerárquica (UMAP-PAM)</button>
-    <div id="img3" style="display:none;">
-        <img src="imagenes/Dendrogram_ConsensusClustering.png" alt="Agrupación jerárquica (UMAP-PAM)">
-    </div>
-    
-    <button onclick="toggleImage('img4')">Expresión génica en tejidos y tumores</button>
-    <div id="img4" style="display:none;">
-        <img src="imagenes/EXP_organos.png" alt="Expresión génica en tejidos y tumores">
-    </div>
-    
-    <button onclick="toggleImage('img5')">Heatmap de módulos y p-values</button>
-    <div id="img5" style="display:none;">
-        <img src="imagenes/Heatmap_ModuleTrait_Right.png" alt="Heatmap de módulos y p-values">
-    </div>
-    
-    <button onclick="toggleImage('img6')">Gráfico de supervivencia Kaplan-Meier</button>
-    <div id="img6" style="display:none;">
-        <img src="imagenes/KaplanMeier_Prognostic_completo.png" alt="Gráfico de supervivencia Kaplan-Meier">
-    </div>
-    
-    <button onclick="toggleImage('img7')">Module membership vs gene significance</button>
-    <div id="img7" style="display:none;">
-        <img src="imagenes/MM_vs_GS_blue.png" alt="Module membership vs gene significance">
-    </div>
-    
-    <button onclick="toggleImage('img8')">Clusterizado UMAP semisupervisado</button>
-    <div id="img8" style="display:none;">
-        <img src="imagenes/UMAP_Consensus_Clustering.png" alt="Clusterizado UMAP semisupervisado">
-    </div>
-    
-    <button onclick="toggleImage('img9')">Barplot de enriquecimiento génico</button>
-    <div id="img9" style="display:none;">
-        <img src="imagenes/barplot3.png" alt="Barplot de enriquecimiento génico">
-    </div>
-    
-    <button onclick="toggleImage('img10')">Violín de expresión diferencial BIRC5</button>
-    <div id="img10" style="display:none;">
-        <img src="imagenes/birc5sub.png" alt="Violín de expresión diferencial BIRC5">
-    </div>
-    
-    <button onclick="toggleImage('img11')">Red de interacción módulo midnightblue</button>
-    <div id="img11" style="display:none;">
-        <img src="imagenes/coexpression_network_midnightblue.png" alt="Red de interacción módulo midnightblue">
-    </div>
-    
-    <button onclick="toggleImage('img12')">Corte del prognostic index</button>
-    <div id="img12" style="display:none;">
-        <img src="imagenes/cut completo.png" alt="Corte del prognostic index">
-    </div>
-    
-    <button onclick="toggleImage('img13')">Deconvolución inmune (CIBERSORT, ESTIMATE)</button>
-    <div id="img13" style="display:none;">
-        <img src="imagenes/deconv10112024.png" alt="Deconvolución inmune (CIBERSORT, ESTIMATE)">
-    </div>
-    
-    <button onclick="toggleImage('img14')">Deconvolución inmune (quanTIseq)</button>
-    <div id="img14" style="display:none;">
-        <img src="imagenes/deconvolucion_bien_separado.png" alt="Deconvolución inmune (quanTIseq)">
-    </div>
-    
-    <button onclick="toggleImage('img15')">Dotplot de enriquecimiento funcional</button>
-    <div id="img15" style="display:none;">
-        <img src="imagenes/dotplot.png" alt="Dotplot de enriquecimiento funcional">
-    </div>
-    
-    <button onclick="toggleImage('img16')">Mutaciones en oncogenes/protooncogenes</button>
-    <div id="img16" style="display:none;">
-        <img src="imagenes/drivergensmut.png" alt="Mutaciones en oncogenes/protooncogenes">
-    </div>
-    
-    <button onclick="toggleImage('img17')">Gráfico de genes esenciales</button>
-    <div id="img17" style="display:none;">
-        <img src="imagenes/essential_genes_plot.png" alt="Gráfico de genes esenciales">
-    </div>
-    
-    <button onclick="toggleImage('img18')">Expresión génica en tipos celulares</button>
-    <div id="img18" style="display:none;">
-        <img src="imagenes/exp_cells.png" alt="Expresión génica en tipos celulares">
-    </div>
-    
-    <button onclick="toggleImage('img19')">Violín expresión diferencial tejido sano vs cáncer</button>
-    <div id="img19" style="display:none;">
-        <img src="imagenes/genes candidatos2.png" alt="Violín expresión diferencial tejido sano vs cáncer">
-    </div>
-    
-    <button onclick="toggleImage('img20')">Heatmap de correlación génica</button>
-    <div id="img20" style="display:none;">
-        <img src="imagenes/heatmap_correlacion.png" alt="Heatmap de correlación génica">
-    </div>
-    
-    <button onclick="toggleImage('img21')">Ruta KEGG coloreada</button>
-    <div id="img21" style="display:none;">
-        <img src="imagenes/hsa05200.pathview.png" alt="Ruta KEGG coloreada">
-    </div>
-    
-    <button onclick="toggleImage('img22')">Comparación IEDB (immunogenicidad)</button>
-    <div id="img22" style="display:none;">
-        <img src="imagenes/plot_comparison_genesNETflu.png" alt="Comparación IEDB (immunogenicidad)">
-    </div>
-    
-    <button onclick="toggleImage('img23')">Barplot de péptidos por proteína (IEDB)</button>
-    <div id="img23" style="display:none;">
-        <img src="imagenes/plot_comparison_geneshisto.png" alt="Barplot de péptidos por proteína (IEDB)">
-    </div>
-    
-    <button onclick="toggleImage('img24')">Red de procesos biológicos y genes</button>
-    <div id="img24" style="display:none;">
-        <img src="imagenes/redes de interacción procesos de cancer.png" alt="Red de procesos biológicos y genes">
-    </div>
-    
-    <button onclick="toggleImage('img25')">Varianza acumulativa de componentes principales</button>
-    <div id="img25" style="display:none;">
-        <img src="imagenes/varianza acumulativa explicada.png" alt="Varianza acumulativa de componentes principales">
-    </div>
-    
-</div>
+    <!-- GRÁFICOS agrupados -->
+    <section id="graficos" class="mb-16">
+      <h2 class="text-2xl font-bold text-blue-900 mb-6">Galería de gráficos</h2>
 
-<script>
-function toggleImage(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
+      <!-- Grupo: Misceláneos -->
+      <details class="mb-6">
+        <summary class="cursor-pointer font-semibold text-lg text-blue-700">📊 Análisis misceláneos</summary>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <a href="imagenes/2_2.png" data-lightbox="misc" data-title="Clusterizado 3D de subtipos tumorales"><img src="imagenes/2_2.png" alt="Clusterizado" class="rounded"></a>
+          <a href="imagenes/Clusterizado.png" data-lightbox="misc" data-title="Clusterizado PCA y PAM"><img src="imagenes/Clusterizado.png" alt="Clusterizado PCA" class="rounded"></a>
+          <a href="imagenes/deconv10112024.png" data-lightbox="misc" data-title="CIBERSORT y ESTIMATE"><img src="imagenes/deconv10112024.png" alt="Deconvolución" class="rounded"></a>
+          <a href="imagenes/deconvolucion_bien_separado.png" data-lightbox="misc" data-title="quanTIseq"><img src="imagenes/deconvolucion_bien_separado.png" alt="quanTIseq" class="rounded"></a>
+          <a href="imagenes/drivergensmut.png" data-lightbox="misc" data-title="Mutaciones"><img src="imagenes/drivergensmut.png" alt="Mutaciones" class="rounded"></a>
+          <a href="imagenes/heatmap_correlacion.png" data-lightbox="misc" data-title="Heatmap de correlación"><img src="imagenes/heatmap_correlacion.png" alt="Heatmap" class="rounded"></a>
+          <a href="imagenes/hsa05200.pathview.png" data-lightbox="misc" data-title="Ruta KEGG"><img src="imagenes/hsa05200.pathview.png" alt="KEGG" class="rounded"></a>
+          <a href="imagenes/redes de interacción procesos de cancer.png" data-lightbox="misc" data-title="Red procesos biológicos"><img src="imagenes/redes de interacción procesos de cancer.png" alt="Red" class="rounded"></a>
+          <a href="imagenes/varianza acumulativa explicada.png" data-lightbox="misc" data-title="Varianza PCA"><img src="imagenes/varianza acumulativa explicada.png" alt="PCA" class="rounded"></a>
+        </div>
+      </details>
+
+      <!-- (Las otras 2 agrupaciones se añaden igual...) -->
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="mb-16">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4">Currículum</h2>
+      <p class="mb-2">Data Analyst con experiencia en bioinformática, transcriptómica y machine learning. Apasionado por transformar datos complejos en soluciones aplicadas para salud y ciencia. Formación sólida en análisis estadístico, R y Python.</p>
+      <a href="CV_DanielRodriguez.pdf" download class="inline-block mt-4 px-6 py-2 bg-blue-700 text-white rounded hover:bg-blue-800">Descargar CV</a>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="mb-16">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4">Contacto</h2>
+      <p><strong>Nombre:</strong> Daniel Enrique Rodríguez Espinosa</p>
+      <p><strong>Ubicación:</strong> Apodaca, Nuevo León, México</p>
+      <p><strong>Email:</strong> <a href="mailto:daniel.rodriguezespn@uanl.edu.mx" class="text-blue-600 hover:underline">daniel.rodriguezespn@uanl.edu.mx</a></p>
+      <a href="mailto:daniel.rodriguezespn@uanl.edu.mx?subject=Solicitud%20de%20servicios%20de%20an%C3%A1lisis%20de%20datos" class="inline-block mt-4 px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700">Contrátame</a>
+    </section>
+
+  </main>
 
 </body>
+
 </html>
