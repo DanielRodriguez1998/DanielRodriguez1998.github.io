@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<script>
-  // Este bloque se ejecuta antes de que se pinte la página
-  (function () {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  })();
-</script>
-
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio of Daniel Rodríguez, bioinformatician and data analyst in biomedical sciences." />
+  <title>Daniel Rodríguez | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+
+  <!-- CARGA EL TEMA ANTES DE TAILWIND -->
+  <script>
+    // Este bloque corre ANTES de cargar Tailwind
+    (function () {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- CONFIGURACIÓN DE TAILWIND -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
 
 <head>
   <meta charset="UTF-8">
