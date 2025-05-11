@@ -23,11 +23,22 @@
 
 
   <script>
+  // ⚠️ Este bloque debe ir antes de cargar Tailwind para que aplique el tema correctamente desde el inicio
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+
+<script>
   tailwind.config = {
     darkMode: 'class'
   };
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
+
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
